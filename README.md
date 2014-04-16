@@ -1,4 +1,4 @@
 my note collections
 =====
 
-> record my notes!
+* record my notes!
