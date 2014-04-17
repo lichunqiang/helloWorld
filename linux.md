@@ -10,3 +10,5 @@ $ find -type d -name .svn
 ```
 $ find -type d -name .svn | xargs rm -rf
 ```
+####4.scp命令
+

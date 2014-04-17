@@ -46,11 +46,18 @@ Cyrus SASL 认证可用。
 ```
 proxy_pass http://127.0.0.1:8080
 ```
+####配置svn用户密码####
+> 设置密码
+```
+$sudo htpasswd -c /opt/svn/passwd abc
+```
+创建用户abc并按照提示设置密码，网页认证的时候使用该用户名和密码登录。后面再添加用户的时候去掉-c选项。
 
-> *设置密码*
-> ```
-> $sudo htpasswd -c /opt/svn/passwd abc
-> ```
-> 创建用户abc并按照提示设置密码，网页认证的时候使用该用户名和密码登录。后面再添加用户的时候去掉-c选项。
+*初始化版本仓库，导入原始代码
+```
+$ svn import /data/www/code file:///opt/svn/repos1 -m 'first init'
+```
 
-
+```
+$ chown -R apache.apache repos
+```
