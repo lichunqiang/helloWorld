@@ -42,16 +42,15 @@ Cyrus SASL 认证可用。
 ###配置apache###
 ***
 由于我的服务器80端口被nginx占用，所以采用nginx反向代理的办法,apache监听8080端口，
-配置nginx ```proxy_pass http://127.0.0.1:8080```
+配置nginx 
+```
+proxy_pass http://127.0.0.1:8080
+```
 
-
-
-<VirtualHost *:8080>
-#    ServerAdmin webmaster@dummy-host.example.com
-    DocumentRoot /var/www/html
-    ServerName yc.ecdarwin.com
-#    ErrorLog logs/dummy-host.example.com-error_log
-#    CustomLog logs/dummy-host.example.com-access_log common
-</VirtualHost>
+> *设置密码*
+> ```
+> $sudo htpasswd -c /opt/svn/passwd abc
+> ```
+> 创建用户abc并按照提示设置密码，网页认证的时候使用该用户名和密码登录。后面再添加用户的时候去掉-c选项。
 
 
