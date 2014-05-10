@@ -61,3 +61,8 @@ $ svn import /data/www/code file:///opt/svn/repos1 -m 'first init'
 ```
 $ chown -R apache.apache repos
 ```
+####创建svn版本库####
+```
+$ svnadmin create /opt/svn/testrepos
+```
+> svnadmin在创建版本库时是root身份，需使用```chown```改变，保证svn对文件目录有权限
