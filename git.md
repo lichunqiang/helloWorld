@@ -42,3 +42,34 @@ Host coding.net-light
 ```
 
 最后就是按照在git平台的初始化项目进行使用了。
+
+## 介绍下如何让你的一个项目在多个git平台共同存在
+
+我们知道在git初始化的时候会执行下面的语句：
+```sh
+$ git remote add origin git@github.com:xx/xx.git
+```
+在当我们进行提交的时候会执行：
+```sh
+$ git push origin master
+```
+
+以前不知道这个用意，但是当我们需要将这个项目推送到多个git平台时，其中奥妙则显现出来了。
+
+比如先有有个第三方git平台，如`git@git.oschina.net`,我们同时也希望把此项目推送到这里。那么我们可以采用以下方法：
+```sh
+$ git remote add new_origin git@git.oschina.net
+```
+接下来我们就可以将项目推送到此平台（前提是已经在该平台建好项目）
+```sh
+$ git push new_origin master
+```
+__Done__
+
+同样当进行其他操作的时候，我们需要推送到`git@git.oschina.net`的时候就需要使用新的了，如新建`tag`
+
+```sh
+$ git tag 1.0.0
+$ git push new_origin 1.0.0
+```
+写在最后：同样我们可以利用`rename`来转换项目的平台,即将`new_origin` 重命名为 `origin`, 操作就和以前一样啦！
