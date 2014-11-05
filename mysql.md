@@ -34,7 +34,8 @@ $ mysqldump -uroot -pdbpasswd  dbname >db.sql;
 $ mysqldump -uroot -pdbpasswd dbname test>db.sql;
 ```
 
-####修改表名，列名
-*添加列：alter table 表名 add column 列名 varchar(30);
-*删除列：alter table 表名 drop column 列名;
-*修改列名：alter table 表名 change 旧列名 新列名;
+#### 修改表名，列名
+
+* 添加列：alter table 表名 add column 列名 varchar(30);
+* 删除列：alter table 表名 drop column 列名;
+* 修改列名：alter table 表名 change 旧列名 新列名;
