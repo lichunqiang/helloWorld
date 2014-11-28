@@ -1,9 +1,11 @@
-当没有权限访问服务器的mysql的解决办法：
+#### 当没有权限访问服务器的mysql的解决办法：
+
 ```
 GRANT ALL PRIVILEGES ON *.* TO root@'%' IDENTIFIED BY 'root-password' WITH GRANT OPTION;
 ```
 
-mysql乱码：
+#### mysql乱码：
+
 ```
 $ vi /etc/my.cnf
 ```
@@ -15,7 +17,7 @@ default-character-set=utf8
 ```
 $ service mysqld restart
 ```
-####mysql数据库数据导入与导出
+#### mysql数据库数据导入与导出
 
 1、导出数据库为dbname的表结构（其中用戶名为root,密码为dbpasswd,生成的脚本名为db.sql）
 ```
@@ -32,6 +34,11 @@ $ mysqldump -uroot -pdbpasswd  dbname >db.sql;
 4、导出数据库为dbname某张表(test)结构及表数据（不加-d）
 ```
 $ mysqldump -uroot -pdbpasswd dbname test>db.sql;
+```
+5、忽略某张或者多张表导出
+
+```
+$ mysqldump -uroot -pdbpasswd dbname --ignore-table=dbname.table1 --ignore-table=dbname.table2 > db.sql
 ```
 
 #### 修改表名，列名
