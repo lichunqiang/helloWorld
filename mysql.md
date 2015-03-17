@@ -1,3 +1,9 @@
+#### create database with utf-8
+
+```
+CREATE DATABASE `database_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+```
+
 #### 当没有权限访问服务器的mysql的解决办法：
 
 ```
